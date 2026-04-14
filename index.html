@@ -20,27 +20,39 @@
 
 <div class="container">
 
-    <div class="card">
+    <div class="card fade-in delay-1">
         <h2>About This Project</h2>
         <p>
-            This website represents a real-world school network built using VLAN segmentation,
-            HSRP redundancy, OSPF routing, NAT, and centralized DHCP services.
+            This project demonstrates the design and implementation of a modern
+            school network using a two-tier architecture. The network is built
+            with redundancy, scalability, and security in mind.
+        </p>
+        <p>
+            It includes dual routers configured with HSRP for gateway redundancy,
+            Layer 3 core switches for inter-VLAN routing, and access switches
+            for end devices in different departments.
         </p>
     </div>
 
-    <div class="card">
-        <h2>Network Features</h2>
+    <div class="card fade-in delay-2">
+        <h2>Network Technologies Used</h2>
         <ul>
-            <li>High availability using HSRP</li>
-            <li>Dynamic routing using OSPF</li>
-            <li>Secure VLAN segmentation</li>
-            <li>Centralized DHCP & DNS server</li>
-            <li>Internet access using NAT</li>
+            <li>VLAN segmentation for departmental isolation</li>
+            <li>HSRP for high availability of default gateway</li>
+            <li>OSPF for dynamic routing across the network</li>
+            <li>DHCP and DNS services for automatic configuration</li>
+            <li>NAT for secure internet access</li>
+            <li>EtherChannel for increased bandwidth and redundancy</li>
         </ul>
     </div>
 
-    <div class="card">
-        <h2>Explore</h2>
+    <div class="card fade-in delay-3">
+        <h2>Explore the Network</h2>
+        <p>
+            Navigate through the pages to view how the network is segmented
+            across departments and how the topology is designed.
+        </p>
+
         <a class="button" href="departments.html">View Departments</a>
         <a class="button" href="topology.html">View Topology</a>
     </div>
