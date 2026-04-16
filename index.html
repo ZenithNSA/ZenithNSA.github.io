@@ -3,6 +3,7 @@
 <head>
     <title>School Network</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -19,6 +20,18 @@
 </nav>
 
 <div class="container">
+    
+    <div class="card fade-in" style="margin-bottom: 20px; border: 2px solid #007bff;">
+    <h2>Portal Login</h2>
+    <div id="auth-form">
+        <input type="email" id="user-email" placeholder="Email" style="padding: 8px; margin: 5px;">
+        <input type="password" id="user-password" placeholder="Password" style="padding: 8px; margin: 5px;">
+        <br>
+        <button class="button" onclick="login()" style="margin-top: 10px;">Login</button>
+        <button class="button" onclick="signUp()" style="background-color: #6c757d;">Sign Up</button>
+    </div>
+    <p id="auth-msg" style="margin-top: 10px; font-weight: bold;"></p>
+    </div>
 
     <div class="card fade-in delay-1">
         <h2>About This Project</h2>
@@ -63,5 +76,34 @@
     <p>© 2026 School Network Project</p>
 </footer>
 
+<script>
+    // Initialize Supabase
+    const supabaseUrl = 'https://viedljqfaotxnvmirghz.supabase.co'; 
+    const supabaseKey = 'sb_publishable_3hOxBE2Lx6tn_g1o7bKSZw_d74vwWcI';
+    const supabase = supabasejs.createClient(supabaseUrl, supabaseKey);
+
+    async function signUp() {
+        const email = document.getElementById('user-email').value;
+        const password = document.getElementById('user-password').value;
+        const { error } = await supabase.auth.signUp({ email, password });
+        const msg = document.getElementById('auth-msg');
+        if (error) { msg.innerText = error.message; msg.style.color = "red"; }
+        else { msg.innerText = "Check your email for a confirmation link!"; msg.style.color = "green"; }
+    }
+
+    async function login() {
+        const email = document.getElementById('user-email').value;
+        const password = document.getElementById('user-password').value;
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+        const msg = document.getElementById('auth-msg');
+        if (error) { msg.innerText = error.message; msg.style.color = "red"; }
+        else { 
+            msg.innerText = "Welcome back, " + data.user.email; 
+            msg.style.color = "green";
+            document.getElementById('auth-form').style.display = "none";
+        }
+    }
+</script>
+    
 </body>
 </html>
