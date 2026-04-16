@@ -99,25 +99,35 @@
         </ul>
     </div>
 
-    <div class="card fade-in delay-3">
-        <h2>Explore the Network</h2>
-        <p>
-            Navigate through the pages to view how the network is segmented
-            across departments and how the topology is designed.
-        </p>
+   <div class="card fade-in delay-3" style="margin-top: 30px;">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center;">
+        
+        <div>
+            <h2>Explore the Network Portal</h2>
+            <p>Navigate through the segmented pages to view departmental configurations, addressing schemas, and how the logical topology is designed for high availability.</p>
+            <div style="margin-top: 20px;">
+                <a class="button" href="/departments/" style="margin-right: 10px;">View Departments</a>
+                <a class="button" href="/topology/">View Topology</a>
+            </div>
+        </div>
 
-        <a class="button" href="/departments/">View Departments</a>
-        <a class="button" href="/topology/">View Topology</a>
-    </div>
-    
-    <div class="card fade-in" style="text-align: center;">
-        <h3>Scan to Access on Mobile</h3>
-        <img src="qrcode.png" alt="Scan me" style="width: 150px; border: 5px solid white; border-radius: 8px;">
-        <p style="font-size: 0.8em; color: #666;">https://nsa.coszmitt.org/</p>
-    </div>
+        <div style="text-align: center;">
+            <div style="
+                background-color: #f8f9fa; /* Light grey background */
+                padding: 15px;
+                border-radius: 12px;
+                border: 2px dashed #007bff; /* Fanciful dashed blue border */
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow */
+                display: inline-block;
+            ">
+                <img src="your-qrcode-filename.png" alt="Scan for mobile" style="width: 140px; border-radius: 8px;">
+                <h4 style="margin: 10px 0 0; color: #007bff; font-weight: bold;">SCAN TO ACCESS</h4>
+                <p style="font-size: 0.8em; color: #666; margin: 0;">nsa.coszmitt.org/</p>
+            </div>
+        </div>
 
+    </div>
 </div>
-
 <footer>
     <p>© 2026 School Network Project</p>
 </footer>
